@@ -40,5 +40,10 @@ public class UserInfoService implements UserDetailsService {
 
         return "User Added Successfully";
     }
+
+    public Account findAccountById(Long id) {
+        Account account = userInfoRepository.findById(id).orElse(null);
+        return account;
+    }
 }
 

@@ -3,22 +3,29 @@ package nl.workingtalent.project.laas.models;
 import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String username; //TODO: username weghalen en uses van username naar email zetten.
     private String password;
     private String email;
-    private String roles;
+    private String roles;  //TODO: Ask if people can have multiple roles. If so, store as a list, not a string.
+    private String firstName;
+    private String lastName;
 
-    public Account() {}
+    public Account() {
+    }
 
-    public Account(String username, String password, String roles) {
+    public Account(String username, String password, String email, String roles, String firstName, String lastName) {
         this.username = username;
         this.password = password;
+        this.email = email;
         this.roles = roles;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -59,5 +66,21 @@ public class Account {
 
     public void setRoles(String roles) {
         this.roles = roles;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
