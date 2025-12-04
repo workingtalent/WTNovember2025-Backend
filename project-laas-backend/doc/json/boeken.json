@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"title": "Design patterns: Dlements of Reusable Object-Oriented Software",
+		"author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+		"isbn10": "0201633612",
+		"isbn13": "978-0201633610",
+		"createDate": "2024-11-28T11:32:29.611+00:00"
+	},
+	{
+		"id": 2,
+		"title": "Scrum: The Art of Doing Twice the Work in Half the Time",
+		"author": "Jeff Sutherland",
+		"isbn10": "038534645X",
+		"isbn13": "978-0385346450",
+		"createDate": "2024-11-28T11:32:29.611+00:00"
+	},
+	{
+		"id": 3,
+		"title": "Head First Java: A Brain-Friendly Guide",
+		"author": "Kathy Sierra, Bert Bates, Trisha Gee",
+		"isbn10": "1491910771",
+		"isbn13": "978-1491910771",
+		"createDate": "2024-11-28T11:32:29.611+00:00"
+	}
+]
