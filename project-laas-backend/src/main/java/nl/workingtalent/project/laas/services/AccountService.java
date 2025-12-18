@@ -24,4 +24,16 @@ public class AccountService {
         }
         return accountRepository.save(account);
     }
+
+    public Account login(String email, String password) {
+        Account account = accountRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        if (!account.getPassword().equals(password)) {
+            throw new RuntimeException("Invalid password");
+        }
+
+        return account;
+    }
+
 }
