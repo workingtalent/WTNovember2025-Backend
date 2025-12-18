@@ -1,12 +1,12 @@
 package nl.workingtalent.project.laas.models;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserInfoDetails implements UserDetails {
 
@@ -17,7 +17,7 @@ public class UserInfoDetails implements UserDetails {
     public UserInfoDetails(Account userInfo) {
         this.username = userInfo.getUsername();
         this.password = userInfo.getPassword();
-        this.authorities = List.of(userInfo.getRoles().split(","))
+        this.authorities = List.of(userInfo.getRole().split(","))
                 .stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());

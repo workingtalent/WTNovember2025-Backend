@@ -94,14 +94,20 @@ VALUES (2, 'NEW', 2);
 INSERT INTO "copy" (id, condition, book_id)
 VALUES (3, 'NEW', 3);
 
+INSERT INTO "copy" (id, condition, book_id)
+VALUES (4, 'USED', 1);
+
 INSERT INTO "loan" (id, create_date, copy_id, account_id)
 VALUES (1, NOW(), 1, 1);
 
 INSERT INTO "loan" (id, create_date, copy_id, account_id)
-VALUES (2, NOW(), 2, 1);
+VALUES (2, NOW() - INTERVAL '1 day', 2, 1);
 
 INSERT INTO "loan" (id, create_date, copy_id, account_id)
-VALUES (3, NOW(), 3, 2);
+VALUES (3, NOW() - INTERVAL '2 day', 3, 2);
+
+INSERT INTO "loan" (id, create_date, copy_id, account_id)
+VALUES (4, NOW() - INTERVAL '3 day', 4, 3);
 
 INSERT INTO "reservation" (id, create_date, book_id, account_id)
 VALUES (1, NOW(), 1, 1);

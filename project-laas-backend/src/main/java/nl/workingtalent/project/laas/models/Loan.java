@@ -1,11 +1,16 @@
 package nl.workingtalent.project.laas.models;
 
-import jakarta.persistence.*;
-
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 @Entity
-public class Loan {
+public class Loan implements Comparable<Loan> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,5 +65,10 @@ public class Loan {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    @Override
+    public int compareTo(Loan other) {
+        return this.createDate.compareTo(other.createDate);
     }
 }

@@ -1,6 +1,9 @@
 package nl.workingtalent.project.laas.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Account {
@@ -11,14 +14,15 @@ public class Account {
     private String username;
     private String password;
     private String email;
-    private String roles;
+    private String role;
 
     public Account() {}
 
-    public Account(String username, String password, String roles) {
+    public Account(String username, String password, String email, String role) {
         this.username = username;
         this.password = password;
-        this.roles = roles;
+        this.email = email;
+        this.role = role;
     }
 
     public Long getId() {
@@ -53,11 +57,11 @@ public class Account {
         this.email = email;
     }
 
-    public String getRoles() {
-        return roles;
+    public String getRole() {
+        return role;
     }
 
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public void setRole(String role) {
+        this.role = role;
     }
 }
